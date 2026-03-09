@@ -1,0 +1,1023 @@
+/* ============================================================
+   SERVICES PAGES — /uslugi/
+   ============================================================ */
+
+
+/* ========== HERO ========== */
+.s-hero {
+	padding: var(--section-py-desktop) 0;
+	background: var(--bg-secondary);
+	border-bottom: 1px solid var(--border);
+}
+
+.s-hero__inner {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: start;
+	gap: var(--sp-16);
+}
+
+/* Left */
+.s-hero__content {
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-6);
+}
+
+.s-hero__eyebrow {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--sp-2);
+	font-size: var(--fs-small);
+	font-weight: var(--fw-body-medium);
+	color: var(--accent-light);
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.s-hero__title {
+	font-size: var(--fs-h1);
+	font-weight: var(--fw-h1);
+	line-height: 1.1;
+}
+
+.s-hero__text {
+	font-size: var(--fs-large);
+	color: var(--text-secondary);
+	max-width: 560px;
+	line-height: 1.7;
+}
+
+.s-hero__buttons {
+	display: flex;
+	align-items: center;
+	gap: var(--btn-gap);
+	flex-wrap: wrap;
+}
+
+/* Тезисы под кнопками */
+.s-hero__theses {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--sp-3);
+	margin-top: var(--sp-2);
+}
+
+.s-hero__thesis {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--sp-2);
+	padding: var(--sp-2) var(--sp-4);
+	border-radius: var(--radius-pill);
+	background: var(--card-base);
+	border: 1px solid var(--border);
+	font-size: var(--fs-small);
+	font-weight: var(--fw-body-medium);
+	color: var(--text-secondary);
+	backdrop-filter: blur(var(--blur-card));
+}
+
+.s-hero__thesis svg {
+	color: var(--accent-light);
+	flex-shrink: 0;
+}
+
+/* Right — мини-карточки */
+.s-hero__cards {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--sp-4);
+}
+
+.s-hero__card {
+	background: var(--card-base);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-card);
+	padding: var(--sp-6);
+	backdrop-filter: blur(var(--blur-card));
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-3);
+	transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.s-hero__card:hover {
+	border-color: var(--border-accent);
+	box-shadow: var(--shadow-card-hover);
+}
+
+.s-hero__card-title {
+	font-size: var(--fs-body);
+	font-weight: var(--fw-h3);
+	color: var(--text-primary);
+	line-height: 1.3;
+}
+
+.s-hero__card-text {
+	font-size: var(--fs-small);
+	color: var(--text-muted);
+	line-height: 1.5;
+}
+
+.s-hero__card-tag {
+	display: inline-flex;
+	align-self: flex-start;
+	padding: var(--sp-1) var(--sp-3);
+	border-radius: var(--radius-pill);
+	font-size: var(--fs-caption);
+	font-weight: var(--fw-body-medium);
+	background: var(--card-solid);
+	color: var(--accent-light);
+	border: 1px solid var(--border-accent);
+}
+
+/* Hero adaptive */
+@media (max-width: 1024px) {
+	.s-hero { padding: var(--section-py-tablet) 0; }
+	.s-hero__inner {
+		grid-template-columns: 1fr;
+		gap: var(--sp-10);
+	}
+	.s-hero__cards {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media (max-width: 640px) {
+	.s-hero { padding: var(--section-py-mobile) 0; }
+	.s-hero__cards {
+		grid-template-columns: 1fr;
+	}
+	.s-hero__theses {
+		flex-direction: column;
+	}
+}
+
+
+/* ========== EYEBROW (shared) ========== */
+.s-eyebrow {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--sp-2);
+	font-size: var(--fs-small);
+	font-weight: var(--fw-body-medium);
+	color: var(--accent-light);
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	margin-bottom: var(--sp-3);
+}
+
+
+/* ========== SECTION HEADER (shared) ========== */
+.s-section-header {
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-4);
+	margin-bottom: var(--sp-12);
+	max-width: 720px;
+}
+
+.s-section-header--center {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.s-section-header p {
+	font-size: var(--fs-large);
+	color: var(--text-secondary);
+	line-height: 1.7;
+}
+
+
+/* ========== MAIN SERVICES (2 big cards) ========== */
+.s-main__grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--card-gap);
+}
+
+.s-main__card {
+	background: var(--card-base);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-card);
+	padding: var(--card-padding);
+	backdrop-filter: blur(var(--blur-card));
+	box-shadow: var(--shadow-card);
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-5);
+	transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.s-main__card:hover {
+	border-color: var(--border-accent);
+	box-shadow: 0 20px 60px rgba(79, 70, 229, 0.15);
+}
+
+.s-main__card-head {
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-3);
+}
+
+.s-main__card-title {
+	font-size: var(--fs-h3);
+	font-weight: var(--fw-h3);
+}
+
+.s-main__card-text {
+	font-size: var(--fs-body);
+	color: var(--text-secondary);
+	line-height: 1.7;
+}
+
+.s-main__card-tag {
+	display: inline-flex;
+	align-self: flex-start;
+	padding: var(--sp-1) var(--sp-3);
+	border-radius: var(--radius-pill);
+	font-size: var(--fs-small);
+	font-weight: var(--fw-body-medium);
+	background: var(--card-solid);
+	color: var(--accent-light);
+	border: 1px solid var(--border-accent);
+}
+
+/* Список фич в карточке */
+.s-main__card-features {
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-2);
+	flex: 1;
+}
+
+.s-main__card-features li {
+	display: flex;
+	align-items: center;
+	gap: var(--sp-2);
+	font-size: var(--fs-small);
+	color: var(--text-secondary);
+	padding: var(--sp-2) 0;
+}
+
+.s-main__card-features li::before {
+	content: "✓";
+	color: var(--accent);
+	font-weight: var(--fw-btn);
+	flex-shrink: 0;
+}
+
+.s-main__card .btn {
+	align-self: flex-start;
+}
+
+@media (max-width: 768px) {
+	.s-main__grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+
+/* ========== TASKS (6 cards) ========== */
+.s-tasks__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: var(--card-gap);
+}
+
+.s-tasks__card {
+	background: var(--card-base);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-card);
+	padding: var(--card-padding);
+	backdrop-filter: blur(var(--blur-card));
+	box-shadow: var(--shadow-card);
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-3);
+	transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.s-tasks__card:hover {
+	border-color: var(--border-accent);
+	box-shadow: var(--shadow-card-hover);
+}
+
+.s-tasks__card-title {
+	font-size: var(--fs-body);
+	font-weight: var(--fw-h3);
+	color: var(--text-primary);
+	line-height: 1.3;
+}
+
+.s-tasks__card-text {
+	font-size: var(--fs-small);
+	color: var(--text-muted);
+	line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+	.s-tasks__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+	.s-tasks__grid { grid-template-columns: 1fr; }
+}
+
+
+/* ========== RESULTS (4 cards) ========== */
+.s-results__grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: var(--card-gap);
+}
+
+.s-results__card {
+	background: var(--card-base);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-card);
+	padding: var(--card-padding);
+	backdrop-filter: blur(var(--blur-card));
+	box-shadow: var(--shadow-card);
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-3);
+	transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.s-results__card:hover {
+	border-color: var(--border-accent);
+	box-shadow: var(--shadow-card-hover);
+}
+
+/* Иконка-номер */
+.s-results__icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 48px;
+	height: 48px;
+	border-radius: var(--radius-card-sm);
+	background: var(--card-solid);
+	border: 1px solid var(--border-accent);
+	color: var(--accent-light);
+}
+
+.s-results__card-title {
+	font-size: var(--fs-body);
+	font-weight: var(--fw-h3);
+	color: var(--text-primary);
+	line-height: 1.3;
+}
+
+.s-results__card-text {
+	font-size: var(--fs-small);
+	color: var(--text-muted);
+	line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+	.s-results__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+	.s-results__grid { grid-template-columns: 1fr; }
+}
+
+
+/* ========== PROCESS (steps) ========== */
+.s-process__grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: var(--card-gap);
+}
+
+.s-process__card {
+	background: var(--card-base);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-card);
+	padding: var(--sp-6);
+	backdrop-filter: blur(var(--blur-card));
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-4);
+	transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.s-process__card:hover {
+	border-color: var(--border-accent);
+	box-shadow: var(--shadow-card-hover);
+}
+
+/* Step number */
+.s-process__step {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 48px;
+	height: 48px;
+	border-radius: var(--radius-card-sm);
+	background: var(--card-solid);
+	border: 1px solid var(--border-accent);
+	position: relative;
+	color: var(--accent-light);
+}
+
+.s-process__step span {
+	position: absolute;
+	top: -8px;
+	right: -8px;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: var(--accent);
+	color: #fff;
+	font-size: 11px;
+	font-weight: var(--fw-btn);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: var(--font-heading);
+}
+
+.s-process__card-title {
+	font-size: var(--fs-body);
+	font-weight: var(--fw-h3);
+	color: var(--text-primary);
+	line-height: 1.3;
+}
+
+.s-process__card-text {
+	font-size: var(--fs-small);
+	color: var(--text-muted);
+	line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+	.s-process__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+	.s-process__grid { grid-template-columns: 1fr; }
+}
+
+
+/* ========== PRICING (2 cards) ========== */
+.s-pricing__grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--card-gap);
+}
+
+.s-pricing__card {
+	background: var(--card-base);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-card);
+	padding: var(--card-padding);
+	backdrop-filter: blur(var(--blur-card));
+	box-shadow: var(--shadow-card);
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-5);
+	transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.s-pricing__card:hover {
+	border-color: var(--border-accent);
+	box-shadow: 0 20px 60px rgba(79, 70, 229, 0.15);
+}
+
+.s-pricing__card-title {
+	font-size: var(--fs-h3);
+	font-weight: var(--fw-h3);
+}
+
+.s-pricing__card-text {
+	font-size: var(--fs-body);
+	color: var(--text-secondary);
+	line-height: 1.7;
+}
+
+.s-pricing__card-price {
+	font-size: var(--fs-price);
+	font-weight: var(--fw-h1);
+	font-family: var(--font-heading);
+	color: var(--accent-light);
+}
+
+.s-pricing__card .btn {
+	align-self: flex-start;
+}
+
+@media (max-width: 768px) {
+	.s-pricing__grid { grid-template-columns: 1fr; }
+}
+
+
+/* ========== CASES (3 cards) ========== */
+.s-cases__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: var(--card-gap);
+}
+
+.s-cases__card {
+	background: var(--card-base);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-card);
+	padding: var(--card-padding);
+	backdrop-filter: blur(var(--blur-card));
+	box-shadow: var(--shadow-card);
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-4);
+	transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.s-cases__card:hover {
+	border-color: var(--border-accent);
+	box-shadow: var(--shadow-card-hover);
+}
+
+.s-cases__card-title {
+	font-size: var(--fs-body);
+	font-weight: var(--fw-h3);
+	color: var(--text-primary);
+}
+
+.s-cases__card-text {
+	font-size: var(--fs-small);
+	color: var(--text-muted);
+	line-height: 1.6;
+	flex: 1;
+}
+
+.s-cases__card-link {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--sp-2);
+	font-size: var(--fs-small);
+	font-weight: var(--fw-body-medium);
+	color: var(--accent-light);
+	transition: gap 0.2s, color 0.2s;
+}
+
+.s-cases__card-link:hover {
+	color: var(--text-primary);
+	gap: var(--sp-3);
+}
+
+@media (max-width: 1024px) {
+	.s-cases__grid { grid-template-columns: 1fr; }
+}
+
+
+/* ========== FAQ ========== */
+.s-faq__list {
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-3);
+	max-width: 860px;
+	margin: 0 auto;
+}
+
+.s-faq__item {
+	background: var(--card-base);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-card-sm);
+	backdrop-filter: blur(var(--blur-card));
+	overflow: hidden;
+	transition: border-color 0.25s ease;
+}
+
+.s-faq__item:hover {
+	border-color: var(--border-strong);
+}
+
+.s-faq__item.is-open {
+	border-color: var(--border-accent);
+}
+
+.s-faq__question {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--sp-4);
+	width: 100%;
+	padding: var(--sp-5) var(--sp-6);
+	font-family: var(--font-body);
+	font-size: var(--fs-body);
+	font-weight: var(--fw-body-medium);
+	color: var(--text-primary);
+	text-align: left;
+	cursor: pointer;
+}
+
+.s-faq__question svg {
+	flex-shrink: 0;
+	color: var(--text-muted);
+	transition: transform 0.3s ease;
+}
+
+.s-faq__item.is-open .s-faq__question svg {
+	transform: rotate(180deg);
+}
+
+.s-faq__answer {
+	padding: 0 var(--sp-6) 0;
+	max-height: 0;
+	overflow: hidden;
+	opacity: 0;
+	transition: max-height 0.35s ease, opacity 0.3s ease, padding 0.35s ease;
+}
+
+.s-faq__item.is-open .s-faq__answer {
+	max-height: 600px;
+	opacity: 1;
+	padding: 0 var(--sp-6) var(--sp-5);
+}
+
+.s-faq__answer p {
+	font-size: var(--fs-body);
+	color: var(--text-muted);
+	line-height: 1.7;
+}
+
+
+/* ========== CTA ========== */
+.s-cta {
+	padding: var(--section-py-desktop) 0;
+	background: var(--bg-secondary);
+	border-top: 1px solid var(--border);
+}
+
+.s-cta__inner {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: start;
+	gap: var(--sp-16);
+}
+
+/* Left */
+.s-cta__content {
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-6);
+}
+
+.s-cta__text {
+	font-size: var(--fs-large);
+	color: var(--text-secondary);
+	line-height: 1.7;
+	max-width: 520px;
+}
+
+.s-cta__buttons {
+	display: flex;
+	align-items: center;
+	gap: var(--btn-gap);
+	flex-wrap: wrap;
+}
+
+/* Right — форма */
+.s-cta__form {
+	background: var(--card-base);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-card);
+	padding: var(--card-padding);
+	backdrop-filter: blur(var(--blur-card));
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-5);
+}
+
+.s-cta__form-title {
+	font-size: var(--fs-body);
+	font-weight: var(--fw-h3);
+	color: var(--text-primary);
+}
+
+.s-cta__form .input,
+.s-cta__form .textarea {
+	width: 100%;
+}
+
+/* Статус отправки */
+.s-cta__form-status {
+	font-size: var(--fs-small);
+	line-height: 1.5;
+	display: none;
+}
+
+.s-cta__form-status.is-success {
+	display: block;
+	color: var(--color-success);
+}
+
+.s-cta__form-status.is-error {
+	display: block;
+	color: var(--color-danger);
+}
+
+@media (max-width: 1024px) {
+	.s-cta { padding: var(--section-py-tablet) 0; }
+	.s-cta__inner {
+		grid-template-columns: 1fr;
+		gap: var(--sp-10);
+	}
+}
+
+@media (max-width: 640px) {
+	.s-cta { padding: var(--section-py-mobile) 0; }
+}
+
+
+/* ========== TARIFFS (3 cards) ========== */
+.s-tariffs__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: var(--card-gap);
+}
+
+.s-tariff {
+	background: var(--card-base);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-card);
+	padding: var(--card-padding);
+	backdrop-filter: blur(var(--blur-card));
+	box-shadow: var(--shadow-card);
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-5);
+	transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.s-tariff:hover {
+	border-color: var(--border-accent);
+	box-shadow: 0 20px 60px rgba(79, 70, 229, 0.15);
+}
+
+/* Выделенный тариф */
+.s-tariff--featured {
+	border-color: var(--border-accent);
+	background: var(--card-solid);
+}
+
+.s-tariff__name {
+	font-size: var(--fs-small);
+	font-weight: var(--fw-body-medium);
+	color: var(--accent-light);
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.s-tariff__price {
+	font-size: var(--fs-price);
+	font-weight: var(--fw-h1);
+	font-family: var(--font-heading);
+	color: var(--text-primary);
+}
+
+.s-tariff__desc {
+	font-size: var(--fs-small);
+	color: var(--text-muted);
+	line-height: 1.6;
+	flex: 1;
+}
+
+.s-tariff .btn {
+	width: 100%;
+	justify-content: center;
+}
+
+@media (max-width: 768px) {
+	.s-tariffs__grid { grid-template-columns: 1fr; }
+}
+
+
+/* ========== COMPARISON TABLE ========== */
+.s-table-wrap {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	border: 1px solid var(--border);
+	border-radius: var(--radius-card);
+	background: var(--card-base);
+	backdrop-filter: blur(var(--blur-card));
+}
+
+.s-table {
+	width: 100%;
+	min-width: 700px;
+	border-collapse: collapse;
+}
+
+.s-table thead th {
+	padding: var(--sp-4) var(--sp-5);
+	font-family: var(--font-heading);
+	font-size: var(--fs-small);
+	font-weight: var(--fw-h3);
+	color: var(--text-primary);
+	text-align: center;
+	border-bottom: 1px solid var(--border);
+	background: var(--card-solid);
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.s-table thead th:first-child {
+	text-align: left;
+	border-top-left-radius: var(--radius-card);
+}
+
+.s-table thead th:last-child {
+	border-top-right-radius: var(--radius-card);
+}
+
+.s-table tbody tr {
+	transition: background 0.15s ease;
+}
+
+.s-table tbody tr:hover {
+	background: rgba(255, 255, 255, 0.03);
+}
+
+.s-table tbody td {
+	padding: var(--sp-4) var(--sp-5);
+	border-bottom: 1px solid var(--border);
+	font-size: var(--fs-small);
+	color: var(--text-secondary);
+	vertical-align: top;
+}
+
+.s-table tbody tr:last-child td {
+	border-bottom: none;
+}
+
+/* Первая колонка — название + описание */
+.s-table tbody td:first-child {
+	min-width: 220px;
+}
+
+/* Центрирование колонок тарифов */
+.s-table tbody td:not(:first-child) {
+	text-align: center;
+	white-space: nowrap;
+	color: var(--text-primary);
+	font-weight: var(--fw-body-medium);
+}
+
+/* Название фичи */
+.s-table__feature-name {
+	display: block;
+	font-weight: var(--fw-body-medium);
+	color: var(--text-primary);
+	margin-bottom: 2px;
+}
+
+.s-table__feature-desc {
+	display: block;
+	font-size: var(--fs-caption);
+	color: var(--text-muted);
+	line-height: 1.5;
+}
+
+/* Галочка / крестик */
+.s-table__yes,
+.s-table__no {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+}
+
+.s-table__yes {
+	color: var(--color-success);
+}
+
+.s-table__no {
+	color: var(--text-muted);
+	opacity: 0.4;
+}
+
+/* Подсказка под таблицей */
+.s-table-hint {
+	display: none;
+	font-size: var(--fs-caption);
+	color: var(--text-muted);
+	margin-top: var(--sp-3);
+	text-align: center;
+}
+
+@media (max-width: 768px) {
+	.s-table-hint { display: block; }
+}
+
+
+/* ========== VISIBILITY / TOP (4 cards) ========== */
+.s-visibility__grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: var(--card-gap);
+}
+
+.s-visibility__card {
+	background: var(--card-base);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-card);
+	padding: var(--card-padding);
+	backdrop-filter: blur(var(--blur-card));
+	box-shadow: var(--shadow-card);
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-3);
+	transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.s-visibility__card:hover {
+	border-color: var(--border-accent);
+	box-shadow: var(--shadow-card-hover);
+}
+
+.s-visibility__icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 48px;
+	height: 48px;
+	border-radius: var(--radius-card-sm);
+	background: var(--card-solid);
+	border: 1px solid var(--border-accent);
+	color: var(--accent-light);
+}
+
+.s-visibility__card-title {
+	font-size: var(--fs-body);
+	font-weight: var(--fw-h3);
+	color: var(--text-primary);
+	line-height: 1.3;
+}
+
+.s-visibility__card-text {
+	font-size: var(--fs-small);
+	color: var(--text-muted);
+	line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+	.s-visibility__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+	.s-visibility__grid { grid-template-columns: 1fr; }
+}
+
+
+/* ========== PRICING SINGLE (centered card) ========== */
+.s-pricing--single {
+	max-width: 520px;
+	margin: 0 auto;
+}
+
+.s-pricing__card-features {
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-2);
+}
+
+.s-pricing__card-features li {
+	display: flex;
+	align-items: center;
+	gap: var(--sp-2);
+	font-size: var(--fs-small);
+	color: var(--text-secondary);
+	padding: var(--sp-2) 0;
+}
+
+.s-pricing__card-features li::before {
+	content: "✓";
+	color: var(--accent);
+	font-weight: var(--fw-btn);
+	flex-shrink: 0;
+}
+
+
+/* ========== PROCESS GRID — 5 columns ========== */
+.s-process__grid--5 {
+	grid-template-columns: repeat(5, 1fr);
+}
+
+@media (max-width: 1024px) {
+	.s-process__grid--5 { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 640px) {
+	.s-process__grid--5 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 400px) {
+	.s-process__grid--5 { grid-template-columns: 1fr; }
+}
