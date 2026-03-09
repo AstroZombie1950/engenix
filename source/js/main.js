@@ -48,3 +48,31 @@ setTimeout(() => {
 popupClose.addEventListener('click', () => {
 	popup.classList.remove('is-visible');
 });
+
+/* --- FAQ аккордеон --- */
+document.addEventListener('click', e => {
+	const btn = e.target.closest('[class*="__question"]');
+	if (!btn) return;
+
+	const item   = btn.closest('[class*="__item"]');
+	const answer = item?.querySelector('[class*="__answer"]');
+	if (!item || !answer) return;
+
+	const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+	/* закрываем все в пределах того же списка */
+	const list = item.closest('[class*="__list"]');
+	list?.querySelectorAll('[class*="__item"]').forEach(i => {
+		i.querySelector('[class*="__question"]')?.setAttribute('aria-expanded', 'false');
+		const a = i.querySelector('[class*="__answer"]');
+		if (a) a.hidden = true;
+		i.classList.remove('is-open');
+	});
+
+	/* переключаем текущий */
+	if (!isOpen) {
+		btn.setAttribute('aria-expanded', 'true');
+		answer.hidden = false;
+		item.classList.add('is-open');
+	}
+});
