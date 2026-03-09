@@ -1118,7 +1118,11 @@
 }
 
 .vb-faq__answer {
-	padding: 0 var(--sp-6) var(--sp-5);
+    padding: 0;
+}
+
+.vb-faq__answer p {
+    padding: var(--card-padding) var(--sp-5);
 }
 
 .vb-faq__answer p {

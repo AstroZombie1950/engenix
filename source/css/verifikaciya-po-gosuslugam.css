@@ -417,7 +417,7 @@
 /* ========== ДРУГИЕ ТИПЫ ========== */
 .vg-compare__grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
 	gap: var(--card-gap);
 }
 
@@ -830,7 +830,11 @@
 }
 
 .vg-faq__answer {
-	padding: 0 var(--sp-6) var(--sp-5);
+    padding: 0;
+}
+
+.vg-faq__answer p {
+    padding: var(--card-padding) var(--sp-5);
 }
 
 .vg-faq__answer p {

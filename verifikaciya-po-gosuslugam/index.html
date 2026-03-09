@@ -56,9 +56,6 @@
 						<ul class="header__dropdown">
                             <li><a href="/uslugi/avitolog-prodvizhenie" class="header__dropdown-link">Авитолог продвижение</a></li>
                             <li><a href="/uslugi/konsultaciya-avitologa" class="header__dropdown-link">Консультация авитолога</a></li>
-							<li class="header__dropdown-divider"></li>
-							<li><a href="/prices" class="header__dropdown-link">Цены</a></li>
-							<li><a href="/cases" class="header__dropdown-link">Кейсы</a></li>
 						</ul>
 					</li>
 					<li class="header__nav-item header__nav-item--dropdown">
@@ -67,7 +64,8 @@
 							<svg class="header__nav-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
 						</a>
 						<ul class="header__dropdown">
-							<li><a href="/reviews" class="header__dropdown-link">Отзывы</a></li>
+                            <li><a href="/cases" class="header__dropdown-link">Кейсы</a></li>
+                            <li><a href="/reviews" class="header__dropdown-link">Отзывы</a></li>
 							<li><a href="/faq" class="header__dropdown-link">FAQ</a></li>
 							<li><a href="/blog" class="header__dropdown-link">Блог</a></li>
 						</ul>
@@ -78,14 +76,9 @@
 							<svg class="header__nav-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
 						</a>
 						<ul class="header__dropdown">
-							<li><a href="/about" class="header__dropdown-link">О компании</a></li>
 							<li><a href="/about/history" class="header__dropdown-link">История</a></li>
 							<li><a href="/about/team" class="header__dropdown-link">Команда</a></li>
-							<li><a href="/about/clients" class="header__dropdown-link">Клиенты</a></li>
-							<li><a href="/about/documents" class="header__dropdown-link">Документы</a></li>
 							<li><a href="/about/requisites" class="header__dropdown-link">Реквизиты</a></li>
-							<li class="header__dropdown-divider"></li>
-							<li><a href="/partners" class="header__dropdown-link">Партнёрам</a></li>
 						</ul>
 					</li>
 					<li class="header__nav-item">
@@ -812,7 +805,7 @@
 						<span>Чем аккаунт с Госуслугами лучше паспортного?</span>
 						<svg class="vg-faq__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
 					</button>
-					<div class="vg-faq__answer" hidden>
+					<div class="vg-faq__answer">
 						<p>Госуслуги дают максимальный статус доверия — Авито считает этот способ эталонным. Плюс при повторной проверке вам достаточно нескольких минут через приложение, а не отправки сканов и ожидания. Паспорт дешевле, но Госуслуги — это премиум-класс надёжности.</p>
 					</div>
 				</div>
@@ -822,7 +815,7 @@
 						<span>Не будет ли доступа к моим личным данным на Госуслугах?</span>
 						<svg class="vg-faq__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
 					</button>
-					<div class="vg-faq__answer" hidden>
+					<div class="vg-faq__answer">
 						<p>Нет. Аккаунт верифицирован на данные другого человека — к вашему профилю на Госуслугах это никак не привязано. Вы получаете только доступ к аккаунту Авито, ваши личные данные остаются при вас.</p>
 					</div>
 				</div>
@@ -832,7 +825,7 @@
 						<span>Бывают ли повторные проверки с Госуслугами?</span>
 						<svg class="vg-faq__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
 					</button>
-					<div class="vg-faq__answer" hidden>
+					<div class="vg-faq__answer">
 						<p>Бывают, но редко. Главное преимущество — если это случится, мы пройдём повторную проверку за вас через приложение Госуслуг за несколько минут. Никаких задержек и бюрократии.</p>
 					</div>
 				</div>
@@ -842,7 +835,7 @@
 						<span>Сколько стоит повторная проверка?</span>
 						<svg class="vg-faq__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
 					</button>
-					<div class="vg-faq__answer" hidden>
+					<div class="vg-faq__answer">
 						<p>1 500 ₽. Ничего не делайте самостоятельно — просто напишите нам в Telegram, мы всё сделаем за вас.</p>
 					</div>
 				</div>
@@ -852,7 +845,7 @@
 						<span>Чем отличаются варианты «на вашу симку» и «на нашу симку»?</span>
 						<svg class="vg-faq__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
 					</button>
-					<div class="vg-faq__answer" hidden>
+					<div class="vg-faq__answer">
 						<p>При варианте «на вашу симку» (2 500 ₽) аккаунт сразу привязан к вашему номеру — удобнее и быстрее. При варианте «на нашу симку» (3 500 ₽) мы предоставляем номер телефона — подходит, если у вас нет свободного номера.</p>
 					</div>
 				</div>
@@ -862,7 +855,7 @@
 						<span>Что делать, если не получается пройти биометрию?</span>
 						<svg class="vg-faq__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
 					</button>
-					<div class="vg-faq__answer" hidden>
+					<div class="vg-faq__answer">
 						<p>Пишите нам — предложим альтернативы: новый профиль с верификацией за 2 000 ₽ или проверку по реквизитам на текущем профиле за 9 500 ₽. Решение найдём в любом случае.</p>
 					</div>
 				</div>
@@ -947,22 +940,18 @@
 				<div class="footer__col">
 					<p class="footer__col-title">Услуги и информация</p>
 					<ul class="footer__links">
-						<li><a href="/avtolog/vedenie/">Ведение Авито</a></li>
-						<li><a href="/avtolog/konsultaciya/">Консультация авитолога</a></li>
-						<li><a href="/prices">Цены</a></li>
+                        <li><a href="/uslugi/avitolog-prodvizhenie">Продвижение Авито</a></li>
+                        <li><a href="/uslugi/konsultaciya-avitologa">Консультация авитолога</a></li>
 						<li><a href="/cases">Кейсы</a></li>
-						<li><a href="/about/documents">Документы</a></li>
-						<li><a href="/about/requisites">Реквизиты</a></li>
 						<li><a href="/partners">Партнёрам</a></li>
 					</ul>
 				</div>
 				<div class="footer__col">
 					<p class="footer__col-title">О компании</p>
 					<ul class="footer__links">
-						<li><a href="/about">О компании</a></li>
 						<li><a href="/about/history">История</a></li>
 						<li><a href="/about/team">Команда</a></li>
-						<li><a href="/about/clients">Клиенты</a></li>
+						<li><a href="/about/requisites">Реквизиты</a></li>
 					</ul>
 				</div>
 			</div>

@@ -1481,3 +1481,17 @@ p {
 		width: calc(100vw - 32px);
 	}
 }
+
+/* Ответ скрыт по умолчанию */
+[class*="__answer"] {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.35s ease, opacity 0.3s ease;
+	opacity: 0;
+}
+
+/* Ответ раскрыт когда item.is-open */
+[class*="__item"].is-open [class*="__answer"] {
+	max-height: 600px;
+	opacity: 1;
+}

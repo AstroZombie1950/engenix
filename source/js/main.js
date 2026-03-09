@@ -1,11 +1,17 @@
-
 /* Бургер */
 const burger = document.getElementById('headerBurger');
 const nav    = document.getElementById('headerNav');
 
 burger.addEventListener('click', () => {
-    nav.classList.toggle('is-open');
+	nav.classList.toggle('is-open');
 });
+
+// закрыть при скролле
+window.addEventListener('scroll', () => {
+	if (nav.classList.contains('is-open')) {
+		nav.classList.remove('is-open');
+	}
+}, { passive: true });
 
 /* Дропдауны по клику */
 document.querySelectorAll('.header__nav-item--dropdown').forEach(item => {
@@ -41,13 +47,15 @@ scrollBtn.addEventListener('click', () => {
 const popup      = document.getElementById('popup');
 const popupClose = document.getElementById('popupClose');
 
-setTimeout(() => {
-	popup.classList.add('is-visible');
-}, 5000);
+if (popup && popupClose) {
+	setTimeout(() => {
+		popup.classList.add('is-visible');
+	}, 5000);
 
-popupClose.addEventListener('click', () => {
-	popup.classList.remove('is-visible');
-});
+	popupClose.addEventListener('click', () => {
+		popup.classList.remove('is-visible');
+	});
+}
 
 /* --- FAQ аккордеон --- */
 document.addEventListener('click', e => {
@@ -58,21 +66,18 @@ document.addEventListener('click', e => {
 	const answer = item?.querySelector('[class*="__answer"]');
 	if (!item || !answer) return;
 
-	const isOpen = btn.getAttribute('aria-expanded') === 'true';
+	const isOpen = item.classList.contains('is-open');
 
-	/* закрываем все в пределах того же списка */
+	/* Закрываем все элементы в том же списке */
 	const list = item.closest('[class*="__list"]');
 	list?.querySelectorAll('[class*="__item"]').forEach(i => {
 		i.querySelector('[class*="__question"]')?.setAttribute('aria-expanded', 'false');
-		const a = i.querySelector('[class*="__answer"]');
-		if (a) a.hidden = true;
 		i.classList.remove('is-open');
 	});
 
-	/* переключаем текущий */
+	/* Открываем текущий, если был закрыт */
 	if (!isOpen) {
 		btn.setAttribute('aria-expanded', 'true');
-		answer.hidden = false;
 		item.classList.add('is-open');
 	}
 });

@@ -1080,9 +1080,12 @@
 }
 
 .vr-faq__answer {
-	padding: 0 var(--sp-6) var(--sp-5);
+    padding: 0;
 }
 
+.vr-faq__answer p {
+    padding: var(--card-padding) var(--sp-5);
+}
 .vr-faq__answer p {
 	font-size: var(--fs-body);
 	color: var(--text-secondary);
