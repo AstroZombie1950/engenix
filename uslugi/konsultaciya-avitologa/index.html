@@ -27,7 +27,6 @@
 	<link rel="stylesheet" href="/source/css/style_services.css">
 </head>
 <body>
-
 	<!-- ========== HEADER ========== -->
 	<header class="header">
 		<div class="container header__inner">
@@ -76,14 +75,23 @@
 							<svg class="header__nav-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
 						</a>
 						<ul class="header__dropdown">
-							<li><a href="/about/history" class="header__dropdown-link">История</a></li>
-							<li><a href="/about/team" class="header__dropdown-link">Команда</a></li>
-							<li><a href="/about/requisites" class="header__dropdown-link">Реквизиты</a></li>
+							<li><a href="/history" class="header__dropdown-link">История</a></li>
+							<li><a href="/team" class="header__dropdown-link">Команда</a></li>
+							<li><a href="/requisites" class="header__dropdown-link">Реквизиты</a></li>
 						</ul>
 					</li>
-					<li class="header__nav-item">
-						<a href="/contacts" class="header__nav-link">Контакты</a>
-					</li>
+                    <li class="header__nav-item header__nav-item--dropdown">
+                        <a href="#" class="header__nav-link">
+                            Ещё
+                            <svg class="header__nav-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </a>
+                        <ul class="header__dropdown">
+                            <li><a href="/partners" class="header__dropdown-link">Партнёрам</a></li>
+                            <li><a href="/contacts" class="header__dropdown-link">Контакты</a></li>
+                            <li><a href="/policy" class="header__dropdown-link">Политика</a></li>
+                            <li><a href="/cookie" class="header__dropdown-link">Cookie</a></li>
+                        </ul>
+                    </li>
 				</ul>
 			</nav>
 			<div class="header__actions">
@@ -101,8 +109,20 @@
 			</div>
 		</div>
 	</header>
-
-
+	<!-- ========== BREADCRUMBS ========== -->
+	<nav class="breadcrumbs" aria-label="Хлебные крошки">
+		<div class="container breadcrumbs__inner">
+			<a href="/" class="breadcrumbs__link">Главная</a>
+			<span class="breadcrumbs__sep">
+				<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+			</span>
+			<a href="/uslugi" class="breadcrumbs__link">Услуги</a>
+			<span class="breadcrumbs__sep">
+				<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+			</span>
+			<span class="breadcrumbs__current">Консультация авитолога</span>
+		</div>
+	</nav>
 	<!-- ========== HERO ========== -->
 	<section class="s-hero">
 		<div class="container s-hero__inner">
@@ -160,8 +180,6 @@
 
 		</div>
 	</section>
-
-
 	<!-- ========== С ЧЕМ ПРИХОДЯТ ========== -->
 	<section class="section" id="requests">
 		<div class="container">
@@ -200,8 +218,6 @@
 
 		</div>
 	</section>
-
-
 	<!-- ========== ЧТО РАЗБИРАЕМ ========== -->
 	<section class="section section-alt" id="breakdown">
 		<div class="container">
@@ -240,8 +256,6 @@
 
 		</div>
 	</section>
-
-
 	<!-- ========== КАКИЕ ВОПРОСЫ ЗАКРЫВАЕТ ========== -->
 	<section class="section" id="questions">
 		<div class="container">
@@ -284,8 +298,6 @@
 
 		</div>
 	</section>
-
-
 	<!-- ========== РЕЗУЛЬТАТ ========== -->
 	<section class="section section-alt" id="results">
 		<div class="container">
@@ -328,8 +340,6 @@
 
 		</div>
 	</section>
-
-
 	<!-- ========== ПРОЦЕСС ========== -->
 	<section class="section" id="process">
 		<div class="container">
@@ -381,8 +391,6 @@
 
 		</div>
 	</section>
-
-
 	<!-- ========== СТОИМОСТЬ ========== -->
 	<section class="section section-alt" id="pricing">
 		<div class="container">
@@ -411,8 +419,6 @@
 
 		</div>
 	</section>
-
-
 	<!-- ========== КЕЙСЫ ========== -->
 	<section class="section" id="cases">
 		<div class="container">
@@ -451,8 +457,6 @@
 
 		</div>
 	</section>
-
-
 	<!-- ========== FAQ ========== -->
 	<section class="section section-alt" id="faq">
 		<div class="container">
@@ -539,8 +543,6 @@
 
 		</div>
 	</section>
-
-
 	<!-- ========== CTA ========== -->
 	<section class="s-cta" id="cta">
 		<div class="container s-cta__inner">
@@ -566,8 +568,6 @@
 
 		</div>
 	</section>
-
-
 	<!-- ========== FOOTER ========== -->
 	<footer class="footer">
 		<div class="container">
@@ -600,14 +600,15 @@
 						<li><a href="/partners">Партнёрам</a></li>
 					</ul>
 				</div>
-				<div class="footer__col">
-					<p class="footer__col-title">О компании</p>
-					<ul class="footer__links">
-						<li><a href="/about/history">История</a></li>
-						<li><a href="/about/team">Команда</a></li>
-						<li><a href="/about/requisites">Реквизиты</a></li>
-					</ul>
-				</div>
+                <div class="footer__col">
+                    <p class="footer__col-title">О компании</p>
+                    <ul class="footer__links">
+                        <li><a href="/history">История</a></li>
+                        <li><a href="/team">Команда</a></li>
+                        <li><a href="/requisites">Реквизиты</a></li>
+                        <li><a href="/contacts"> Контакты </a></li>
+                    </ul>
+                </div>
 			</div>
 			<div class="footer__divider"></div>
 			<div class="footer__contacts">
@@ -642,8 +643,6 @@
 			</div>
 		</div>
 	</footer>
-
-
 	<!-- ========== POPUP ========== -->
 	<div class="popup" id="popup">
 		<button class="popup__close" id="popupClose" aria-label="Закрыть">
@@ -661,10 +660,8 @@
 	<button class="scroll-top" id="scrollTop" aria-label="Наверх">
 		<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
 	</button>
-
 	<!-- Scripts -->
 	<script src="/source/js/main.js"></script>
 	<script src="/source/js/services.js"></script>
-
 </body>
 </html>

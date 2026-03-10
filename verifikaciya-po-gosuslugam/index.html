@@ -76,14 +76,23 @@
 							<svg class="header__nav-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
 						</a>
 						<ul class="header__dropdown">
-							<li><a href="/about/history" class="header__dropdown-link">История</a></li>
-							<li><a href="/about/team" class="header__dropdown-link">Команда</a></li>
-							<li><a href="/about/requisites" class="header__dropdown-link">Реквизиты</a></li>
+							<li><a href="/history" class="header__dropdown-link">История</a></li>
+							<li><a href="/team" class="header__dropdown-link">Команда</a></li>
+							<li><a href="/requisites" class="header__dropdown-link">Реквизиты</a></li>
 						</ul>
 					</li>
-					<li class="header__nav-item">
-						<a href="/contacts" class="header__nav-link">Контакты</a>
-					</li>
+                    <li class="header__nav-item header__nav-item--dropdown">
+                        <a href="#" class="header__nav-link">
+                            Ещё
+                            <svg class="header__nav-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </a>
+                        <ul class="header__dropdown">
+                            <li><a href="/partners" class="header__dropdown-link">Партнёрам</a></li>
+                            <li><a href="/contacts" class="header__dropdown-link">Контакты</a></li>
+                            <li><a href="/policy" class="header__dropdown-link">Политика</a></li>
+                            <li><a href="/cookie" class="header__dropdown-link">Cookie</a></li>
+                        </ul>
+                    </li>
 				</ul>
 			</nav>
 			<div class="header__actions">
@@ -106,11 +115,11 @@
 		<div class="container breadcrumbs__inner">
 			<a href="/" class="breadcrumbs__link">Главная</a>
 			<span class="breadcrumbs__sep">
-				<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+				<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
 			</span>
 			<a href="/#catalog" class="breadcrumbs__link">Аккаунты</a>
 			<span class="breadcrumbs__sep">
-				<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+				<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
 			</span>
 			<span class="breadcrumbs__current">Верификация через Госуслуги</span>
 		</div>
@@ -946,14 +955,15 @@
 						<li><a href="/partners">Партнёрам</a></li>
 					</ul>
 				</div>
-				<div class="footer__col">
-					<p class="footer__col-title">О компании</p>
-					<ul class="footer__links">
-						<li><a href="/about/history">История</a></li>
-						<li><a href="/about/team">Команда</a></li>
-						<li><a href="/about/requisites">Реквизиты</a></li>
-					</ul>
-				</div>
+                <div class="footer__col">
+                    <p class="footer__col-title">О компании</p>
+                    <ul class="footer__links">
+                        <li><a href="/history">История</a></li>
+                        <li><a href="/team">Команда</a></li>
+                        <li><a href="/requisites">Реквизиты</a></li>
+                        <li><a href="/contacts"> Контакты </a></li>
+                    </ul>
+                </div>
 			</div>
 			<div class="footer__divider"></div>
 			<div class="footer__contacts">

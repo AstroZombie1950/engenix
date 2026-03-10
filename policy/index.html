@@ -81,15 +81,24 @@
 							<svg class="header__nav-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
 						</a>
 						<ul class="header__dropdown">
-							<li><a href="/about/history" class="header__dropdown-link">История</a></li>
-							<li><a href="/about/team" class="header__dropdown-link">Команда</a></li>
-							<li><a href="/about/requisites" class="header__dropdown-link">Реквизиты</a></li>
+							<li><a href="/history" class="header__dropdown-link">История</a></li>
+							<li><a href="/team" class="header__dropdown-link">Команда</a></li>
+							<li><a href="/requisites" class="header__dropdown-link">Реквизиты</a></li>
 						</ul>
 					</li>
 
-					<li class="header__nav-item">
-						<a href="/contacts" class="header__nav-link">Контакты</a>
-					</li>
+                    <li class="header__nav-item header__nav-item--dropdown">
+                        <a href="#" class="header__nav-link">
+                            Ещё
+                            <svg class="header__nav-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </a>
+                        <ul class="header__dropdown">
+                            <li><a href="/partners" class="header__dropdown-link">Партнёрам</a></li>
+                            <li><a href="/contacts" class="header__dropdown-link">Контакты</a></li>
+                            <li><a href="/policy" class="header__dropdown-link">Политика</a></li>
+                            <li><a href="/cookie" class="header__dropdown-link">Cookie</a></li>
+                        </ul>
+                    </li>
 
 				</ul>
 			</nav>
@@ -110,6 +119,16 @@
 
 		</div>
 	</header>
+	<!-- ========== BREADCRUMBS ========== -->
+	<nav class="breadcrumbs" aria-label="Хлебные крошки">
+		<div class="container breadcrumbs__inner">
+			<a href="/" class="breadcrumbs__link">Главная</a>
+			<span class="breadcrumbs__sep">
+				<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+			</span>
+			<span class="breadcrumbs__current">Политика конфиденциальности</span>
+		</div>
+	</nav>
 	<!-- ========== HERO ========== -->
 	<section class="legal-hero">
 		<div class="container legal-hero__inner">
@@ -312,14 +331,15 @@
 						<li><a href="/partners">Партнёрам</a></li>
 					</ul>
 				</div>
-				<div class="footer__col">
-					<p class="footer__col-title">О компании</p>
-					<ul class="footer__links">
-						<li><a href="/about/history">История</a></li>
-						<li><a href="/about/team">Команда</a></li>
-						<li><a href="/about/requisites">Реквизиты</a></li>
-					</ul>
-				</div>
+                <div class="footer__col">
+                    <p class="footer__col-title">О компании</p>
+                    <ul class="footer__links">
+                        <li><a href="/history">История</a></li>
+                        <li><a href="/team">Команда</a></li>
+                        <li><a href="/requisites">Реквизиты</a></li>
+                        <li><a href="/contacts"> Контакты </a></li>
+                    </ul>
+                </div>
 			</div>
 
 			<div class="footer__divider"></div>
@@ -359,20 +379,6 @@
 
 		</div>
 	</footer>
-	<!-- ========== POPUP ========== -->
-	<div class="popup" id="popup">
-		<button class="popup__close" id="popupClose" aria-label="Закрыть">
-			<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-		</button>
-		<div class="popup__icon">
-			<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 13.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.942z"/></svg>
-		</div>
-		<p class="popup__title">Помощь от профессионального авитолога</p>
-		<p class="popup__text">Защищу от банов, настрою поток лидов и <strong>сэкономлю бюджет</strong> 🚀</p>
-		<a href="https://t.me/engenixbot" class="btn btn-primary popup__btn" target="_blank" rel="noopener">
-			Написать в Telegram
-		</a>
-	</div>
 	<!-- ========== SCROLL TO TOP ========== -->
 	<button class="scroll-top" id="scrollTop" aria-label="Наверх">
 		<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
