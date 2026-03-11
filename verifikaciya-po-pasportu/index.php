@@ -29,87 +29,7 @@
 </head>
 <body>
 	<!-- ========== HEADER ========== -->
-	<header class="header">
-		<div class="container header__inner">
-			<a href="/" class="header__logo">
-				<img src="/source/img/logo_white.png" alt="Engenix">
-			</a>
-			<nav class="header__nav" id="headerNav">
-				<ul class="header__nav-list">
-					<li class="header__nav-item header__nav-item--dropdown">
-						<a href="#" class="header__nav-link">
-							Каталог
-							<svg class="header__nav-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-						</a>
-						<ul class="header__dropdown">
-							<li><a href="/verifikaciya-po-rekvizitam" class="header__dropdown-link">Верификация по реквизитам</a></li>
-							<li><a href="/verifikaciya-po-banku" class="header__dropdown-link">Верификация по банку</a></li>
-							<li><a href="/verifikaciya-po-pasportu" class="header__dropdown-link">Верификация по паспорту</a></li>
-							<li><a href="/verifikaciya-po-gosuslugam" class="header__dropdown-link">Верификация по Госуслугам</a></li>
-						</ul>
-					</li>
-					<li class="header__nav-item header__nav-item--dropdown">
-						<a href="#" class="header__nav-link">
-							Услуги
-							<svg class="header__nav-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-						</a>
-						<ul class="header__dropdown">
-                            <li><a href="/uslugi/avitolog-prodvizhenie" class="header__dropdown-link">Авитолог продвижение</a></li>
-                            <li><a href="/uslugi/konsultaciya-avitologa" class="header__dropdown-link">Консультация авитолога</a></li>
-						</ul>
-					</li>
-					<li class="header__nav-item header__nav-item--dropdown">
-						<a href="#" class="header__nav-link">
-							Инфо
-							<svg class="header__nav-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-						</a>
-						<ul class="header__dropdown">
-                            <li><a href="/cases" class="header__dropdown-link">Кейсы</a></li>
-                            <li><a href="/reviews" class="header__dropdown-link">Отзывы</a></li>
-							<li><a href="/faq" class="header__dropdown-link">FAQ</a></li>
-							<li><a href="/blog" class="header__dropdown-link">Блог</a></li>
-						</ul>
-					</li>
-					<li class="header__nav-item header__nav-item--dropdown">
-						<a href="#" class="header__nav-link">
-							Компания
-							<svg class="header__nav-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-						</a>
-						<ul class="header__dropdown">
-							<li><a href="/history" class="header__dropdown-link">История</a></li>
-							<li><a href="/team" class="header__dropdown-link">Команда</a></li>
-							<li><a href="/requisites" class="header__dropdown-link">Реквизиты</a></li>
-						</ul>
-					</li>
-                    <li class="header__nav-item header__nav-item--dropdown">
-                        <a href="#" class="header__nav-link">
-                            Ещё
-                            <svg class="header__nav-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                        </a>
-                        <ul class="header__dropdown">
-                            <li><a href="/partners" class="header__dropdown-link">Партнёрам</a></li>
-                            <li><a href="/contacts" class="header__dropdown-link">Контакты</a></li>
-                            <li><a href="/policy" class="header__dropdown-link">Политика</a></li>
-                            <li><a href="/cookie" class="header__dropdown-link">Cookie</a></li>
-                        </ul>
-                    </li>
-				</ul>
-			</nav>
-			<div class="header__actions">
-				<a href="https://t.me/engenixbot" class="header__contact-btn" target="_blank" rel="noopener" aria-label="Telegram">
-					<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 13.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.942z"/></svg>
-					<span>Telegram</span>
-				</a>
-				<a href="mailto:reserve@engenix.ru" class="header__contact-btn header__contact-btn--outline" aria-label="Email">
-					<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
-					<span>Email</span>
-				</a>
-				<button class="header__burger" id="headerBurger" aria-label="Открыть меню">
-					<span></span><span></span><span></span>
-				</button>
-			</div>
-		</div>
-	</header>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/source/php/header.php'; ?>
 	<!-- ========== BREADCRUMBS ========== -->
 	<nav class="breadcrumbs" aria-label="Хлебные крошки">
 		<div class="container breadcrumbs__inner">
@@ -336,7 +256,7 @@
 					<div class="vp-reasons__emoji">🚫</div>
 					<h3 class="vp-reasons__title">Вас заблокировали навсегда</h3>
 					<p class="vp-reasons__desc">Авито заблокировал основной аккаунт без возможности восстановления. Новый на своих данных — снова под риском. Готовый аккаунт с чужим паспортом даёт чистый старт.</p>
-					<a href="/blog/kak-razblokirovat-akkaunt" class="vp-reasons__link">
+					<a href="/blog" class="vp-reasons__link">
 						Как разблокировать аккаунт →
 					</a>
 				</div>
@@ -345,7 +265,7 @@
 					<div class="vp-reasons__emoji">🔒</div>
 					<h3 class="vp-reasons__title">Не хотите светить паспорт</h3>
 					<p class="vp-reasons__desc">Загружать скан паспорта в интернет — риск. Особенно если вы продаёте регулярно. Наш аккаунт уже верифицирован — ваши данные нигде не фигурируют.</p>
-					<a href="/blog/verifikaciya-na-avito" class="vp-reasons__link">
+					<a href="/blog" class="vp-reasons__link">
 						Верификация на Авито →
 					</a>
 				</div>
@@ -354,7 +274,7 @@
 					<div class="vp-reasons__emoji">📱</div>
 					<h3 class="vp-reasons__title">Нужно несколько аккаунтов</h3>
 					<p class="vp-reasons__desc">Разные категории товаров, разные города, разные ниши — для каждого лучше отдельный профиль. Один аккаунт с паспортом — один чистый инструмент.</p>
-					<a href="/blog/vtoroy-akkaunt-na-avito" class="vp-reasons__link">
+					<a href="/blog" class="vp-reasons__link">
 						Второй аккаунт на Авито →
 					</a>
 				</div>
@@ -733,32 +653,32 @@
 			<h2 style="text-align: center; margin-bottom: var(--sp-12);">Подробнее о работе с Авито</h2>
 			<div class="vp-articles__grid">
 
-				<a href="/blog/pravila-ispolzovaniya-profil-avito" class="vp-articles__card">
+				<a href="/blog" class="vp-articles__card">
 					<span class="vp-articles__card-title">Правила использования профиля Авито</span>
 					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
 				</a>
 
-				<a href="/blog/kak-razblokirovat-akkaunt-avito" class="vp-articles__card">
+				<a href="/blog" class="vp-articles__card">
 					<span class="vp-articles__card-title">Как разблокировать аккаунт Авито</span>
 					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
 				</a>
 
-				<a href="/blog/akkaunt-zablokirovali-navsegda" class="vp-articles__card">
+				<a href="/blog" class="vp-articles__card">
 					<span class="vp-articles__card-title">Что делать, если аккаунт заблокировали навсегда</span>
 					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
 				</a>
 
-				<a href="/blog/vtoroy-akkaunt-na-avito" class="vp-articles__card">
+				<a href="/blog" class="vp-articles__card">
 					<span class="vp-articles__card-title">Второй аккаунт на Авито</span>
 					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
 				</a>
 
-				<a href="/blog/verifikaciya-na-avito-chto-eto" class="vp-articles__card">
+				<a href="/blog" class="vp-articles__card">
 					<span class="vp-articles__card-title">Верификация на Авито — что это</span>
 					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
 				</a>
 
-				<a href="/blog/pochemu-avito-blokiruet-akkaunty" class="vp-articles__card">
+				<a href="/blog" class="vp-articles__card">
 					<span class="vp-articles__card-title">Почему Авито блокирует аккаунты</span>
 					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
 				</a>
@@ -779,80 +699,7 @@
 		</div>
 	</section>
 	<!-- ========== FOOTER ========== -->
-	<footer class="footer">
-		<div class="container">
-			<div class="footer__grid">
-				<div class="footer__brand">
-					<a href="/" class="footer__logo">
-						<img src="/source/img/logo_white.png" alt="Engenix" height="32">
-					</a>
-					<p class="footer__desc">Профессиональные аккаунты Авито и услуги авитолога с 2020 года</p>
-					<p class="footer__copy">© 2024 Все права защищены</p>
-				</div>
-				<div class="footer__col">
-					<p class="footer__col-title">Аккаунты</p>
-					<ul class="footer__links">
-						<li><a href="/verification-passport">По паспорту</a></li>
-						<li><a href="/verification-gosuslugi">Через Госуслуги</a></li>
-						<li><a href="/verification-bank">Через банк</a></li>
-						<li><a href="/verification-requisites">По реквизитам</a></li>
-						<li><a href="/reviews">Отзывы</a></li>
-						<li><a href="/faq">FAQ</a></li>
-						<li><a href="/blog">Блог</a></li>
-					</ul>
-				</div>
-				<div class="footer__col">
-					<p class="footer__col-title">Услуги и информация</p>
-					<ul class="footer__links">
-                        <li><a href="/uslugi/avitolog-prodvizhenie">Продвижение Авито</a></li>
-                        <li><a href="/uslugi/konsultaciya-avitologa">Консультация авитолога</a></li>
-						<li><a href="/cases">Кейсы</a></li>
-						<li><a href="/partners">Партнёрам</a></li>
-					</ul>
-				</div>
-                <div class="footer__col">
-                    <p class="footer__col-title">О компании</p>
-                    <ul class="footer__links">
-                        <li><a href="/history">История</a></li>
-                        <li><a href="/team">Команда</a></li>
-                        <li><a href="/requisites">Реквизиты</a></li>
-                        <li><a href="/contacts"> Контакты </a></li>
-                    </ul>
-                </div>
-			</div>
-			<div class="footer__divider"></div>
-			<div class="footer__contacts">
-				<a href="https://t.me/engenixbot" class="footer__contact" target="_blank" rel="noopener">
-					<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 13.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.942z"/></svg>
-					Telegram: @engenixbot
-				</a>
-				<a href="mailto:reserve@engenix.ru" class="footer__contact">
-					<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
-					Email: reserve@engenix.ru
-				</a>
-				<a href="https://t.me/Review_EngenixShop" class="footer__contact" target="_blank" rel="noopener">
-					<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-					Канал с отзывами: @Review_EngenixShop
-				</a>
-			</div>
-			<div class="footer__divider"></div>
-			<div class="footer__bottom">
-				<div class="footer__legal">
-					<a href="/policy">Политика конфиденциальности</a>
-					<span class="footer__sep">|</span>
-					<a href="/terms">Пользовательское соглашение</a>
-					<span class="footer__sep">|</span>
-					<a href="/cookie">Cookie</a>
-				</div>
-				<div class="footer__payments">
-					<span>Visa</span>
-					<span>Mastercard</span>
-					<span>Мир</span>
-					<span>USDT</span>
-				</div>
-			</div>
-		</div>
-	</footer>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/source/php/footer.php'; ?>
     <!-- ========== POPUP ========== -->
     <div class="popup" id="popup">
         <button class="popup__close" id="popupClose" aria-label="Закрыть">

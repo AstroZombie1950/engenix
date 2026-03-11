@@ -586,33 +586,12 @@
 	aspect-ratio: 9 / 16;
 }
 
-/* Плейсхолдер — заменяется на <img> когда будут реальные скриншоты */
-.shot-card__placeholder {
-	width: 100%;
-	height: 100%;
-	background: var(--card-base);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	gap: var(--sp-3);
-	color: var(--text-muted);
-}
-
-.shot-card__placeholder span { font-size: var(--fs-small); }
-
 .shot-card__img-wrap img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	display: block;
-}
-
-.shot-card__caption {
-	font-size: var(--fs-small);
-	color: var(--text-muted);
-	line-height: 1.5;
-	text-align: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-card-sm);
+    display: block;
 }
 
 @media (max-width: 768px) {
