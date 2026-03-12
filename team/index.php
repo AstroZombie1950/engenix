@@ -11,11 +11,11 @@
 	<meta property="og:title" content="Команда ENGENIX">
 	<meta property="og:description" content="За каждым успешным проектом стоят люди. Познакомьтесь с теми, кто делает ENGENIX надёжным партнёром.">
 	<meta property="og:url" content="https://engenix.ru/team/">
-	<link rel="icon" href="/favicon.webp" type="image/x-icon">
+	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.webp" type="image/x-icon">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/source/css/style_info.css">
+    <?php wp_head(); ?>
 </head>
 <body>
 	<!-- ========== HEADER ========== -->
@@ -184,5 +184,6 @@
 	<button class="scroll-top" id="scrollTop" aria-label="Наверх">
 		<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
 	</button>
+    <?php wp_footer(); ?>
 </body>
 </html>

@@ -17,12 +17,12 @@
 	<meta property="og:site_name" content="Engenix">
 	<meta property="og:url" content="https://engenix.ru/uslugi/konsultaciya-avitologa/">
 	<!-- Favicon -->
-	<link rel="icon" href="/favicon.webp" type="image/x-icon">
+	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.webp" type="image/x-icon">
 	<!-- Шрифты -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/source/css/style_services.css">
+    <?php wp_head(); ?>
 </head>
 <body>
 	<!-- ========== HEADER ========== -->
@@ -507,5 +507,6 @@
 	</button>
 	<!-- Scripts -->
 	<script src="<?php echo get_template_directory_uri(); ?>/source/js/services.js"></script>
+    <?php wp_footer(); ?>
 </body>
 </html>
