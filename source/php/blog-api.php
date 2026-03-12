@@ -1,22 +1,19 @@
 <?php
-$TEST_url = "http://engenix.seregajv.beget.tech/";
+$TEST_url = "http://engenix.seregajv.beget.tech";
 
-$COMMON_url = "https://engenix.ru/";
+$COMMON_url = "https://engenix.ru";
 
 /* Пагинация через GET-параметр ?page=N */
 
-$per_page    = 6;
-$current     = max(1, (int)($_GET['page'] ?? 1));
+$per_page = 6;
+$current  = max(1, (int)($_GET['page'] ?? 1));
 
-$api_url = TEST_url."wp-json/wp/v2/posts"
+/* URL к API */
+$api_url = $TEST_url."/wp/v2/posts"
          . "?per_page={$per_page}"
          . "&page={$current}"
          . "&status=publish"
-         . "&_fields=date,title,excerpt,link,slug";
-
-
-$slug = htmlspecialchars($post['slug'], ENT_QUOTES, 'UTF-8');
-$link = "/blog/?slug={$slug}";
+         . "&_fields=date,title,excerpt,slug";
 
 /* Запрос с получением заголовков для пагинации */
 $context  = stream_context_create(['http' => ['ignore_errors' => true]]);
@@ -62,7 +59,10 @@ foreach ($posts as $post) {
     $title   = html_entity_decode(strip_tags($post['title']['rendered']), ENT_QUOTES, 'UTF-8');
     $excerpt = trim(html_entity_decode(strip_tags($post['excerpt']['rendered']), ENT_QUOTES, 'UTF-8'));
     $excerpt = mb_strimwidth($excerpt, 0, 180, '…');
-    $link    = htmlspecialchars(filter_var($post['link'], FILTER_SANITIZE_URL), ENT_QUOTES, 'UTF-8');
+
+    /* Ссылка на шаблон статьи через slug */
+    $slug = htmlspecialchars($post['slug'], ENT_QUOTES, 'UTF-8');
+    $link = "/blog/?slug={$slug}";
 
     echo <<<HTML
     <article class="blog-card">
@@ -71,7 +71,7 @@ foreach ($posts as $post) {
             <h2 class="blog-card__title">{$title}</h2>
             <p class="blog-card__excerpt">{$excerpt}</p>
         </div>
-        <a href="{$link}" class="blog-card__link" target="_blank" rel="noopener">
+        <a href="{$link}" class="blog-card__link">
             Читать далее
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
         </a>
@@ -80,17 +80,16 @@ foreach ($posts as $post) {
 }
 ?>
 
-<!-- Пагинация — выводим только если страниц больше одной -->
 <?php if ($total_pages > 1): ?>
 <nav class="blog-pagination" aria-label="Пагинация блога">
     <?php if ($current > 1): ?>
-        <a href="/blog?page=<?= $current - 1 ?>" class="blog-pagination__btn" aria-label="Предыдущая страница">
+        <a href="/blog/?page=<?= $current - 1 ?>" class="blog-pagination__btn" aria-label="Предыдущая страница">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
         </a>
     <?php endif; ?>
 
     <?php for ($i = 1; $i <= $total_pages; $i++): ?>
-        <a href="/blog?page=<?= $i ?>"
+        <a href="/blog/?page=<?= $i ?>"
            class="blog-pagination__page <?= $i === $current ? 'is-active' : '' ?>"
            <?= $i === $current ? 'aria-current="page"' : '' ?>>
             <?= $i ?>
@@ -98,7 +97,7 @@ foreach ($posts as $post) {
     <?php endfor; ?>
 
     <?php if ($current < $total_pages): ?>
-        <a href="/blog?page=<?= $current + 1 ?>" class="blog-pagination__btn" aria-label="Следующая страница">
+        <a href="/blog/?page=<?= $current + 1 ?>" class="blog-pagination__btn" aria-label="Следующая страница">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
         </a>
     <?php endif; ?>

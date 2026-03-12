@@ -1,3 +1,10 @@
+<?php
+/* Если есть slug — отдаём шаблон статьи */
+if (!empty($_GET['slug'])) {
+    include $_SERVER['DOCUMENT_ROOT'] . '/source/php/article.php';
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
