@@ -86,7 +86,7 @@
 
 
 /* ========== FAQ LIST (аккордеон) ========== */
-.faq-list {
+.faq__list {
 	display: flex;
 	flex-direction: column;
 	gap: var(--sp-3);

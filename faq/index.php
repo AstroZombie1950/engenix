@@ -64,7 +64,7 @@
 			<!-- 1. Аккаунты и верификация -->
 			<div class="faq-section" id="accounts">
 				<h2 class="faq-section__title">Аккаунты и верификация</h2>
-				<ul class="faq-list">
+				<ul class="faq__list">
 
 					<li class="faq-list__item">
 						<button class="faq-list__question" aria-expanded="false">
@@ -149,7 +149,7 @@
 			<!-- 2. Услуги авитолога -->
 			<div class="faq-section" id="services">
 				<h2 class="faq-section__title">Услуги авитолога</h2>
-				<ul class="faq-list">
+				<ul class="faq__list">
 
 					<li class="faq-list__item">
 						<button class="faq-list__question" aria-expanded="false">
@@ -212,7 +212,7 @@
 			<!-- 3. Оплата -->
 			<div class="faq-section" id="payment">
 				<h2 class="faq-section__title">Оплата</h2>
-				<ul class="faq-list">
+				<ul class="faq__list">
 
 					<li class="faq-list__item">
 						<button class="faq-list__question" aria-expanded="false">
@@ -260,7 +260,7 @@
 			<!-- 4. Гарантии и возврат -->
 			<div class="faq-section" id="guarantee">
 				<h2 class="faq-section__title">Гарантии и возврат</h2>
-				<ul class="faq-list">
+				<ul class="faq__list">
 
 					<li class="faq-list__item">
 						<button class="faq-list__question" aria-expanded="false">
@@ -315,7 +315,7 @@
 			<!-- 5. Повторные проверки -->
 			<div class="faq-section" id="reverify">
 				<h2 class="faq-section__title">Повторные проверки</h2>
-				<ul class="faq-list">
+				<ul class="faq__list">
 
 					<li class="faq-list__item">
 						<button class="faq-list__question" aria-expanded="false">
@@ -377,7 +377,7 @@
 			<!-- 6. Правила использования -->
 			<div class="faq-section" id="rules">
 				<h2 class="faq-section__title">Правила использования</h2>
-				<ul class="faq-list">
+				<ul class="faq__list">
 
 					<li class="faq-list__item">
 						<button class="faq-list__question" aria-expanded="false">
