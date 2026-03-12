@@ -1,4 +1,8 @@
 <?php
+$TEST_url = "http://engenix.seregajv.beget.tech/";
+
+$COMMON_url = "https://engenix.ru/";
+
 /* Получаем slug из URL */
 $slug = trim($_GET['slug'] ?? '');
 
@@ -9,7 +13,7 @@ if ($slug === '') {
 
 /* Запрос к WP API */
 $slug_safe = urlencode($slug);
-$api_url   = "https://engenix.ru/wp-json/wp/v2/posts?slug={$slug_safe}&status=publish&_fields=date,title,excerpt,content,slug";
+$api_url   = TEST_url."wp-json/wp/v2/posts?slug={$slug_safe}&status=publish&_fields=date,title,excerpt,content,slug";
 
 $response = @file_get_contents($api_url);
 

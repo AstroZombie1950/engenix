@@ -1,14 +1,22 @@
 <?php
+$TEST_url = "http://engenix.seregajv.beget.tech/";
+
+$COMMON_url = "https://engenix.ru/";
+
 /* Пагинация через GET-параметр ?page=N */
 
 $per_page    = 6;
 $current     = max(1, (int)($_GET['page'] ?? 1));
 
-$api_url = "https://engenix.ru/wp-json/wp/v2/posts"
+$api_url = TEST_url."wp-json/wp/v2/posts"
          . "?per_page={$per_page}"
          . "&page={$current}"
          . "&status=publish"
-         . "&_fields=date,title,excerpt,link";
+         . "&_fields=date,title,excerpt,link,slug";
+
+
+$slug = htmlspecialchars($post['slug'], ENT_QUOTES, 'UTF-8');
+$link = "/blog/?slug={$slug}";
 
 /* Запрос с получением заголовков для пагинации */
 $context  = stream_context_create(['http' => ['ignore_errors' => true]]);
@@ -53,6 +61,7 @@ foreach ($posts as $post) {
 
     $title   = html_entity_decode(strip_tags($post['title']['rendered']), ENT_QUOTES, 'UTF-8');
     $excerpt = trim(html_entity_decode(strip_tags($post['excerpt']['rendered']), ENT_QUOTES, 'UTF-8'));
+    $excerpt = mb_strimwidth($excerpt, 0, 180, '…');
     $link    = htmlspecialchars(filter_var($post['link'], FILTER_SANITIZE_URL), ENT_QUOTES, 'UTF-8');
 
     echo <<<HTML
