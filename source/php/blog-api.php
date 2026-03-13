@@ -1,6 +1,4 @@
 <?php
-$TEST_url = "http://engenix.seregajv.beget.tech";
-
 $COMMON_url = "https://engenix.ru";
 
 /* Пагинация через GET-параметр ?page=N */
@@ -9,7 +7,7 @@ $per_page = 6;
 $current  = max(1, (int)($_GET['page'] ?? 1));
 
 /* URL к API */
-$api_url = $TEST_url."/wp/v2/posts"
+$api_url = $COMMON_url."/wp-json/wp/v2/posts"
          . "?per_page={$per_page}"
          . "&page={$current}"
          . "&status=publish"

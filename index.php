@@ -1,3 +1,30 @@
+<?php
+
+$uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+
+$system = [
+    'wp-admin',
+    'wp-login.php',
+    'wp-json',
+    'wp-content',
+    'wp-includes',
+    'xmlrpc.php'
+];
+
+foreach ($system as $path) {
+    if (str_starts_with($uri, $path)) {
+        return;
+    }
+}
+
+$file = get_template_directory() . '/' . $uri . '/index.php';
+
+if ($uri && file_exists($file)) {
+    require $file;
+    exit;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>

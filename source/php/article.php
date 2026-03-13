@@ -1,6 +1,4 @@
 <?php
-$TEST_url = "http://engenix.seregajv.beget.tech";
-
 $COMMON_url = "https://engenix.ru";
 
 /* Получаем slug из URL */
@@ -12,21 +10,16 @@ if ($slug === '') {
 }
 
 /* Запрос к WP API */
-$slug_safe = urlencode($slug);
-$api_url   = $TEST_url."/wp-json/wp/v2/posts?slug={$slug_safe}&status=publish&_fields=date,title,excerpt,content,slug";
-
+$api_url  = $COMMON_url . "/wp-json/wp/v2/posts?slug={$slug}&status=publish&_fields=date,title,excerpt,content,slug";
 $response = @file_get_contents($api_url);
 
 if ($response === false) {
-    header('HTTP/1.0 503 Service Unavailable');
     $error = 'Не удалось загрузить статью. Попробуйте позже.';
-}
-
-$posts = json_decode($response, true);
-
-if (empty($posts)) {
-    header('HTTP/1.0 404 Not Found');
-    $error = 'Статья не найдена.';
+} else {
+    $posts = json_decode($response, true);
+    if (empty($posts)) {
+        $error = 'Статья не найдена.';
+    }
 }
 
 /* Данные статьи */
@@ -45,7 +38,7 @@ if (empty($error)) {
 
     $title   = html_entity_decode(strip_tags($post['title']['rendered']), ENT_QUOTES, 'UTF-8');
     $excerpt = html_entity_decode(strip_tags($post['excerpt']['rendered']), ENT_QUOTES, 'UTF-8');
-    $content = $post['content']['rendered']; /* полный HTML — не чистим */
+    $content = $post['content']['rendered'];
 }
 ?>
 <!DOCTYPE html>
@@ -53,27 +46,28 @@ if (empty($error)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= isset($error) ? 'Ошибка' : htmlspecialchars($title) ?> — Блог Engenix</title>
+    <title><?= !empty($error) ? 'Ошибка' : htmlspecialchars($title) ?> — Блог Engenix</title>
     <?php if (empty($error)): ?>
     <meta name="description" content="<?= htmlspecialchars($excerpt) ?>">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://engenix.ru/blog/?slug=<?= htmlspecialchars($slug) ?>">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="<?= $COMMON_url ?>/blog/?slug=<?= htmlspecialchars($slug) ?>">
     <meta property="og:type" content="article">
     <meta property="og:title" content="<?= htmlspecialchars($title) ?>">
     <meta property="og:description" content="<?= htmlspecialchars($excerpt) ?>">
-    <meta property="og:url" content="https://engenix.ru/blog/?slug=<?= htmlspecialchars($slug) ?>">
+    <meta property="og:url" content="<?= $COMMON_url ?>/blog/?slug=<?= htmlspecialchars($slug) ?>">
     <?php endif; ?>
-    <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.webp" type="image/x-icon">
+    <link rel="icon" href="/favicon.webp" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
-    <?php wp_head(); ?>
+    <link rel="stylesheet" href="/wp-content/themes/engenix/source/css/style_main.css">
+    <link rel="stylesheet" href="/wp-content/themes/engenix/source/css/style_info.css">
 </head>
 <body>
     <!-- ========== HEADER ========== -->
-    <?php include get_template_directory() . '/source/php/header.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/engenix/source/php/header.php'; ?>
 
-    <?php if (isset($error)): ?>
+    <?php if (!empty($error)): ?>
 
     <!-- ========== ОШИБКА ========== -->
     <main class="section">
@@ -83,7 +77,7 @@ if (empty($error)) {
     </main>
 
     <?php else: ?>
-        
+
     <!-- ========== BREADCRUMBS ========== -->
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
         <div class="container breadcrumbs__inner">
@@ -103,15 +97,12 @@ if (empty($error)) {
         <div class="container">
             <div class="article">
 
-                <!-- Мета -->
                 <div class="article__meta">
                     <time class="article__date"><?= $date_fmt ?></time>
                 </div>
 
-                <!-- Заголовок -->
                 <h1 class="article__title"><?= htmlspecialchars($title) ?></h1>
 
-                <!-- Контент из WP -->
                 <div class="article__content">
                     <?= $content ?>
                 </div>
@@ -133,11 +124,10 @@ if (empty($error)) {
     <?php endif; ?>
 
     <!-- ========== FOOTER ========== -->
-    <?php include get_template_directory() . '/source/php/footer.php'; ?>
-    <!-- ========== SCROLL TO TOP ========== -->
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/engenix/source/php/footer.php'; ?>
     <button class="scroll-top" id="scrollTop" aria-label="Наверх">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
     </button>
-    <?php wp_footer(); ?>
+    <script src="/wp-content/themes/engenix/source/js/main.js"></script>
 </body>
 </html>
