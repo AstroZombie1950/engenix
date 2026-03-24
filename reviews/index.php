@@ -11,15 +11,18 @@
 	<meta property="og:title" content="Отзывы клиентов — Engenix">
 	<meta property="og:description" content="Реальные отзывы клиентов Engenix — скриншоты переписок из Telegram-канала.">
 	<meta property="og:url" content="https://engenix.ru/reviews">
-	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.webp" type="image/x-icon">
+	<link rel="icon" href="/favicon.webp" type="image/x-icon">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
-    <?php wp_head(); ?>
+    <link rel="stylesheet" href="/source/css/style_main.css">
+    <link rel="stylesheet" href="/source/css/style_second.css">
+    <link rel="stylesheet" href="/source/css/style_services.css">
+    <link rel="stylesheet" href="/source/css/style_info.css">
 </head>
 <body>
 	<!-- ========== HEADER ========== -->
-    <?php include get_template_directory() . '/source/php/header.php'; ?>
+    <?php include ($_SERVER['DOCUMENT_ROOT'] . '/source/php/header.php'); ?>
 	<!-- ========== BREADCRUMBS ========== -->
 	<nav class="breadcrumbs" aria-label="Хлебные крошки">
 		<div class="container breadcrumbs__inner">
@@ -157,7 +160,7 @@
 				<!-- Плейсхолдер 1 -->
 				<div class="shot-card">
 					<div class="shot-card__img-wrap">
-						<img src="<?php echo get_template_directory_uri(); ?>/source/img/reviews/1.jpg" alt="Отзыв на аккаунт Авито с верификацией по Госуслугам" loading="lazy">
+						<img src="/source/img/reviews/1.jpg" alt="Отзыв на аккаунт Авито с верификацией по Госуслугам" loading="lazy">
 					</div>
 					<p class="shot-card__caption">Клиент подтверждает получение аккаунта с верификацией по Госуслугам</p>
 				</div>
@@ -165,7 +168,7 @@
 				<!-- Плейсхолдер 2 -->
 				<div class="shot-card">
 					<div class="shot-card__img-wrap">
-						<img src="<?php echo get_template_directory_uri(); ?>/source/img/reviews/2.jpg" alt="Отзыв на аккаунт Авито с верификацией через банк" loading="lazy">
+						<img src="/source/img/reviews/2.jpg" alt="Отзыв на аккаунт Авито с верификацией через банк" loading="lazy">
 					</div>
 					<p class="shot-card__caption">Клиент подтверждает получение аккаунта с верификацией через банк</p>
 				</div>
@@ -173,7 +176,7 @@
 				<!-- Плейсхолдер 3 -->
 				<div class="shot-card">
 					<div class="shot-card__img-wrap">
-						<img src="<?php echo get_template_directory_uri(); ?>/source/img/reviews/3.jpg" alt="Успешное прохождение повторной проверки на Авито" loading="lazy">
+						<img src="/source/img/reviews/3.jpg" alt="Успешное прохождение повторной проверки на Авито" loading="lazy">
 					</div>
 					<p class="shot-card__caption">Успешное прохождение повторной проверки — клиент благодарит за оперативность</p>
 				</div>
@@ -198,11 +201,12 @@
 		</div>
 	</section>
 	<!-- ========== FOOTER ========== -->
-    <?php include get_template_directory() . '/source/php/footer.php'; ?>
+    <?php include ($_SERVER['DOCUMENT_ROOT'] . '/source/php/footer.php'); ?>
 	<!-- ========== SCROLL TO TOP ========== -->
 	<button class="scroll-top" id="scrollTop" aria-label="Наверх">
 		<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
 	</button>
-    <?php wp_footer(); ?>
+    <script src="/source/js/main.js"></script>
+    <script src="/source/js/services.js"></script>
 </body>
 </html>

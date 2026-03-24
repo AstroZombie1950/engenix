@@ -1,11 +1,9 @@
-
-    <?php wp_head(); ?>
     <header class="header">
         <div class="container header__inner">
 
             <!-- Лого -->
             <a href="/" class="header__logo">
-                <img src="<?php echo get_template_directory_uri(); ?>/source/img/logo_white.png" alt="Engenix">
+                <img src="/source/img/logo_white.png" alt="Engenix">
             </a>
 
             <!-- Навигация -->

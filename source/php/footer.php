@@ -8,7 +8,7 @@
                 <!-- Колонка 1: бренд -->
                 <div class="footer__brand">
                     <a href="/" class="footer__logo">
-                        <img src="<?php echo get_template_directory_uri(); ?>/source/img/logo_white.png" alt="Engenix" height="32">
+                        <img src="/source/img/logo_white.png" alt="Engenix" height="32">
                     </a>
                     <p class="footer__desc">Профессиональные аккаунты Авито и услуги авитолога с 2020 года</p>
                     <p class="footer__copy">© 2024 Все права защищены</p>

@@ -1,0 +1,39 @@
+User-agent: *
+Allow: /
+
+# WordPress system folders
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+Disallow: /wp-includes/
+
+# Technical folders
+Disallow: /source/
+
+# Search and parameters
+Disallow: /?s=
+Disallow: /*?s=
+Disallow: /*?replytocom
+
+# Feeds
+Disallow: */feed
+Disallow: */rss
+Disallow: */trackback
+
+# Comments
+Disallow: */comments
+
+# Cache and temp
+Disallow: */cache/
+Disallow: */tmp/
+
+# Author pages
+Disallow: /author/
+
+# Pagination duplicates
+Disallow: */page/
+
+# Sitemap
+Sitemap: https://engenix.ru/sitemap.xml
+
+# Host (important for Yandex)
+Host: https://engenix.ru

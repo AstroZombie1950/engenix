@@ -22,7 +22,7 @@ if (ctaForm && ctaSubmit) {
 		data.append('name', name.value.trim());
 		data.append('contact', contact.value.trim());
 		data.append('message', message.value.trim());
-
+		
 		fetch('/source/php/send.php', {
 			method: 'POST',
 			body: data

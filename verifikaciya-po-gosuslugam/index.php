@@ -18,16 +18,20 @@
 	<meta property="og:site_name" content="Engenix">
 	<meta property="og:url" content="https://engenix.ru/verifikaciya-po-gosuslugam/">
 	<!-- Favicon -->
-	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.webp" type="image/x-icon">
+	<link rel="icon" href="/favicon.webp" type="image/x-icon">
 	<!-- Шрифты -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
-    <?php wp_head(); ?>
+    <link rel="stylesheet" href="/source/css/style_main.css">
+    <link rel="stylesheet" href="/source/css/style_second.css">
+    <link rel="stylesheet" href="/source/css/style_services.css">
+    <link rel="stylesheet" href="/source/css/style_info.css">
+    <link rel="stylesheet" href="/source/css/verifikaciya-po-gosuslugam.css">
 </head>
 <body>
 	<!-- ========== HEADER ========== -->
-    <?php include get_template_directory() . '/source/php/header.php'; ?>
+    <?php include ($_SERVER['DOCUMENT_ROOT'] . '/source/php/header.php'); ?>
 	<!-- ========== BREADCRUMBS ========== -->
 	<nav class="breadcrumbs" aria-label="Хлебные крошки">
 		<div class="container breadcrumbs__inner">
@@ -842,7 +846,7 @@
 		</div>
 	</section>
 	<!-- ========== FOOTER ========== -->
-    <?php include get_template_directory() . '/source/php/footer.php'; ?>
+    <?php include ($_SERVER['DOCUMENT_ROOT'] . '/source/php/footer.php'); ?>
 	<!-- ========== POPUP ========== -->
 	<div class="popup" id="popup">
 		<button class="popup__close" id="popupClose" aria-label="Закрыть">
@@ -861,6 +865,7 @@
 	<button class="scroll-top" id="scrollTop" aria-label="Наверх">
 		<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
 	</button>
-    <?php wp_footer(); ?>
+    <script src="/source/js/main.js"></script>
+    <script src="/source/js/services.js"></script>
 </body>
 </html>

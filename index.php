@@ -1,30 +1,3 @@
-<?php
-
-$uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
-
-$system = [
-    'wp-admin',
-    'wp-login.php',
-    'wp-json',
-    'wp-content',
-    'wp-includes',
-    'xmlrpc.php'
-];
-
-foreach ($system as $path) {
-    if (str_starts_with($uri, $path)) {
-        return;
-    }
-}
-
-$file = get_template_directory() . '/' . $uri . '/index.php';
-
-if ($uri && file_exists($file)) {
-    require $file;
-    exit;
-}
-
-?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -53,16 +26,19 @@ if ($uri && file_exists($file)) {
 	<meta name="twitter:description" content="Купить аккаунты Авито – физические и бизнес с гарантией. Быстрая передача данных, безопасная покупка. Начните работать уже сегодня!">
 	<meta name="twitter:image" content="/og-image.jpg">
 	<!-- Favicon -->
-	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.webp" type="image/x-icon">
+	<link rel="icon" href="/favicon.webp" type="image/x-icon">
 	<!-- Шрифты -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
-    <?php wp_head(); ?>
+    <link rel="stylesheet" href="/source/css/style_main.css">
+    <link rel="stylesheet" href="/source/css/style_second.css">
+    <link rel="stylesheet" href="/source/css/style_services.css">
+    <link rel="stylesheet" href="/source/css/style_info.css">
 </head>
 <body>
     <!-- ========== HEADER ========== -->
-    <?php include get_template_directory() . '/source/php/header.php'; ?>
+    <?php include ($_SERVER['DOCUMENT_ROOT'] . '/source/php/header.php'); ?>
     <!-- ========== SEO H1 ========== -->
     <section class="seo-hero">
         <div class="container seo-hero__inner">
@@ -306,7 +282,7 @@ if ($uri && file_exists($file)) {
 
             <!-- Изображение -->
             <div class="info-verify__media">
-                <img src="<?php echo get_template_directory_uri(); ?>/source/img/info_one.png" alt="Верификация Авито">
+                <img src="/source/img/info_one.png" alt="Верификация Авито">
             </div>
 
             <!-- Текст -->
@@ -351,7 +327,7 @@ if ($uri && file_exists($file)) {
 
             <!-- Изображение -->
             <div class="info-buy__media">
-                <img src="<?php echo get_template_directory_uri(); ?>/source/img/info_two.png" alt="Купить аккаунты авито">
+                <img src="/source/img/info_two.png" alt="Купить аккаунты авито">
             </div>
 
         </div>
@@ -362,7 +338,7 @@ if ($uri && file_exists($file)) {
 
             <!-- Изображение -->
             <div class="info-avito__media">
-                <img src="<?php echo get_template_directory_uri(); ?>/source/img/info_three.png" alt="Плашки верификации в аккаунте Авито">
+                <img src="/source/img/info_three.png" alt="Плашки верификации в аккаунте Авито">
             </div>
 
             <!-- Текст -->
@@ -459,7 +435,7 @@ if ($uri && file_exists($file)) {
         </div>
     </section>
     <!-- ========== FOOTER ========== -->
-    <?php include get_template_directory() . '/source/php/footer.php'; ?>
+    <?php include ($_SERVER['DOCUMENT_ROOT'] . '/source/php/footer.php'); ?>
     <!-- ========== POPUP ========== -->
     <div class="popup" id="popup">
         <button class="popup__close" id="popupClose" aria-label="Закрыть">
@@ -478,6 +454,7 @@ if ($uri && file_exists($file)) {
     <button class="scroll-top" id="scrollTop" aria-label="Наверх">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
     </button>
-    <?php wp_footer(); ?>
+    <script src="/source/js/main.js"></script>
+    <script src="/source/js/services.js"></script>
 </body>
 </html>
